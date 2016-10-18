@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton. The COPYRIGTH file at the top level of
+this repository contais the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <menuitem name="Reporting Stock" parent="stock.menu_stock"
+            id="menu_reporting_stock" sequence="90"/>
+
+        <record model="ir.ui.view" id="print_report_stock_start_view_form">
+            <field name="model">nodux_stock_report_by_filters.print_report_stock.start</field>
+            <field name="type">form</field>
+            <field name="name">print_report_stock_start_form</field>
+        </record>
+
+        <record model="ir.action.wizard" id="wizard_print_report_stock">
+            <field name="name">Print Report Stock</field>
+            <field name="wiz_name">nodux_stock_report_by_filters.print_report_stock</field>
+        </record>
+
+        <menuitem parent="menu_reporting_stock" action="wizard_print_report_stock"
+            id="menu_print_report_stock" icon="tryton-print"/>
+
+        <record model="ir.action.report" id="report_stock">
+            <field name="name">Report Stock</field>
+            <field name="model"></field>
+            <field name="report_name">nodux_stock_report_by_filters.report_stock</field>
+            <field name="report">nodux_stock_report_by_filters/report_stock.ods</field>
+        </record>
+    </data>
+</tryton>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- This file is part nodux_sale_payment module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+
+<form string="Print Report Stock" >
+
+    <group col="2" colspan="2" id="bodegas">
+      <separator string="Bodegas" colspan="2" id="bodegas_info"/>
+      <newline/>
+      <field name="todas_bodegas" invisible="1"/>
+      <newline/>
+      <label name="no_bodegas"/>
+      <field name="no_bodegas"/>
+      <newline/>
+      <label name="bodega"/>
+      <field name="bodega"/>
+      <label name="bodega2"/>
+      <field name="bodega2"/>
+      <newline/>
+      <label name="bodega3"/>
+      <field name="bodega3"/>
+      <label name="bodega4"/>
+      <field name="bodega4"/>
+      <newline/>
+      <label name="bodega5"/>
+      <field name="bodega5"/>
+      <label name="bodega6"/>
+      <field name="bodega6"/>
+      <newline/>
+    </group>
+    <newline/>
+    <group col="2" colspan="2" id="bodegas">
+      <separator string="Stock" colspan="2" id="stock_info"/>
+      <label name="todos_stock"/>
+      <field name="todos_stock"/>
+      <label name="mayor"/>
+      <field name="mayor"/>
+      <label name="menor"/>
+      <field name="menor"/>
+      <label name="igual"/>
+      <field name="igual"/>
+      <label name="mayor_igual"/>
+      <field name="mayor_igual"/>
+    </group>
+    <group col="2" colspan="2" id="bodegas">
+      <separator string="Precio" colspan="2" id="precio_info"/>
+      <label name="todos_precio"/>
+      <field name="todos_precio"/>
+      <label name="mayor_precio"/>
+      <field name="mayor_precio"/>
+      <label name="menor_precio"/>
+      <field name="menor_precio"/>
+    </group>
+    <newline/>
+    <group col="2" colspan="2" id="bodegas">
+      <separator string="Items" colspan="2" id="iva_info"/>
+      <label name="todos_iva"/>
+      <field name="todos_iva"/>
+      <label name="sin_iva"/>
+      <field name="sin_iva"/>
+      <label name="con_iva"/>
+      <field name="con_iva"/>
+    </group>
+    <group col="2" colspan="2" id="bodegas">
+      <separator string="Activos" colspan="2" id="activo_info"/>
+      <label name="todos_activo"/>
+      <field name="todos_activo"/>
+      <label name="activo"/>
+      <field name="activo"/>
+      <label name="baja"/>
+      <field name="baja"/>
+      <field name="date" invisible="1"/>
+      <field name="company" invisible="1"/>
+    </group>
+</form>

@@ -1,0 +1,616 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,activo:"
+msgid "Activos"
+msgstr ""
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,baja:"
+msgid "Baja"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,bodega2:"
+msgid "Location 2"
+msgstr "Bodega 2"
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,bodega3:"
+msgid "Location 3"
+msgstr "Bodega 3"
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,bodega4:"
+msgid "Location 4"
+msgstr "Bodega 4"
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,bodega5:"
+msgid "Location 5"
+msgstr "Bodega 5"
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,bodega6:"
+msgid "Location 6"
+msgstr "Bodega 6"
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,bodega:"
+msgid "Location"
+msgstr "Bodega"
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,company:"
+msgid "Company"
+msgstr "Empresa"
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,con_iva:"
+msgid "Con IVA"
+msgstr ""
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,date:"
+msgid "Date"
+msgstr "Fecha"
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,igual:"
+msgid "= 0"
+msgstr ""
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,mayor:"
+msgid "> 0"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,mayor_igual:"
+msgid "> = 0"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,mayor_precio:"
+msgid "Precio > 0"
+msgstr ""
+
+msgctxt "field:nodux_stock_report_by_filters.print_report_stock.start,menor:"
+msgid "< 0"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,menor_precio:"
+msgid "Precio =< 0"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "No. de Bodegas"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,sin_iva:"
+msgid "Sin IVA"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,todas_bodegas:"
+msgid "Todas"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,todos_activo:"
+msgid "Todos"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,todos_iva:"
+msgid "Todos"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,todos_precio:"
+msgid "Todos"
+msgstr ""
+
+msgctxt ""
+"field:nodux_stock_report_by_filters.print_report_stock.start,todos_stock:"
+msgid "Todos"
+msgstr ""
+
+msgctxt "help:nodux_stock_report_by_filters.print_report_stock.start,igual:"
+msgid "Stock igual a cero"
+msgstr ""
+
+msgctxt "help:nodux_stock_report_by_filters.print_report_stock.start,mayor:"
+msgid "Stock mayor a cero"
+msgstr ""
+
+msgctxt ""
+"help:nodux_stock_report_by_filters.print_report_stock.start,mayor_igual:"
+msgid "Stock mayor o igual a cero"
+msgstr ""
+
+msgctxt ""
+"help:nodux_stock_report_by_filters.print_report_stock.start,mayor_precio:"
+msgid "Precio mayor a cero"
+msgstr ""
+
+msgctxt "help:nodux_stock_report_by_filters.print_report_stock.start,menor:"
+msgid "Stock menor a cero"
+msgstr ""
+
+msgctxt ""
+"help:nodux_stock_report_by_filters.print_report_stock.start,menor_precio:"
+msgid "Precio menor-igual a cero"
+msgstr ""
+
+msgctxt ""
+"help:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "Numero de bodegas para reporte inventario"
+msgstr ""
+
+msgctxt "model:ir.action,name:report_stock"
+msgid "Report Stock"
+msgstr "Reporte de Inventario"
+
+msgctxt "model:ir.action,name:wizard_print_report_stock"
+msgid "Print Report Stock"
+msgstr "Reporte de Inventario"
+
+msgctxt "model:ir.ui.menu,name:menu_print_report_stock"
+msgid "Print Report Stock"
+msgstr "Reporte de Inventario"
+
+msgctxt "model:ir.ui.menu,name:menu_reporting_stock"
+msgid "Reporting Stock"
+msgstr "Reporte de Inventario"
+
+msgctxt "model:nodux_stock_report_by_filters.print_report_stock.start,name:"
+msgid "Print Report Stock Start"
+msgstr "Reporte de Inventario"
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "$"
+msgstr "$"
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "$0.00"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "("
+msgstr "("
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ")"
+msgstr ")"
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ","
+msgstr ","
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "-"
+msgstr "-"
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "/"
+msgstr "/"
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "/es"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "/for"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "/if"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "00/00/0000"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "00:00:00"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "???"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA 1:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA 2:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA 3:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA 4:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA 5:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA 6:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA1"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA2"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA3"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA4"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA5"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGA6"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "BODEGAS:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "Bodega:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "CANTIDAD"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "CÓDIGO"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "Fecha:"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "INVENTARIO GENERAL DE MERCADERIA  -"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 1"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 1 CON IVA"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 2"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 2 CON IVA"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 3"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 3 CON IVA"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 4"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO 4 CON IVA"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO DE VENTA"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRECIO PROMEDIO"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "PRODUCTO"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "Page"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "company.party.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "for each=\"line in lines\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "formatLang(date, company.party.lang)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[0].fijo,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[0].fijo_con_iva,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[1].fijo,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[1].fijo_con_iva,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[2].fijo,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[2].fijo_con_iva,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[3].fijo,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[3].fijo_con_iva,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[4].fijo,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[4].fijo_con_iva,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[5].fijo,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.pricelist[5].fijo_con_iva,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.product.template.cost_price, company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid ""
+"formatLang(line.product.template.list_price,company.party.lang, "
+"currency=company.currency)"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==0\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==1\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==2\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==3\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==4\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==5\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"len(line.pricelist)==6\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"no_bodegas=='no_1'\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"no_bodegas=='no_2'\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"no_bodegas=='no_3'\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"no_bodegas=='no_4'\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"no_bodegas=='no_5'\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "if test=\"no_bodegas=='no_6'\""
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.product.code"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.product.template.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.quantity"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.quantity2"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.quantity3"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.quantity4"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.quantity5"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.quantity6"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "line.uom.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "location.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "location2.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "location3.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "location4.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "location5.name"
+msgstr ""
+
+msgctxt "odt:nodux_stock_report_by_filters.report_stock:"
+msgid "location6.name"
+msgstr ""
+
+msgctxt ""
+"selection:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "1 Bodega"
+msgstr ""
+
+msgctxt ""
+"selection:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "2 Bodegas"
+msgstr ""
+
+msgctxt ""
+"selection:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "3 Bodegas"
+msgstr ""
+
+msgctxt ""
+"selection:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "4 Bodegas"
+msgstr ""
+
+msgctxt ""
+"selection:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "5 Bodegas"
+msgstr ""
+
+msgctxt ""
+"selection:nodux_stock_report_by_filters.print_report_stock.start,no_bodegas:"
+msgid "6 Bodegas"
+msgstr ""
+
+msgctxt "view:nodux_stock_report_by_filters.print_report_stock.start:"
+msgid "Activos"
+msgstr ""
+
+msgctxt "view:nodux_stock_report_by_filters.print_report_stock.start:"
+msgid "Bodegas"
+msgstr ""
+
+msgctxt "view:nodux_stock_report_by_filters.print_report_stock.start:"
+msgid "Items"
+msgstr ""
+
+msgctxt "view:nodux_stock_report_by_filters.print_report_stock.start:"
+msgid "Precio"
+msgstr ""
+
+msgctxt "view:nodux_stock_report_by_filters.print_report_stock.start:"
+msgid "Print Report Stock"
+msgstr "Reporte de Inventario"
+
+msgctxt "view:nodux_stock_report_by_filters.print_report_stock.start:"
+msgid "Stock"
+msgstr "Stock"
+
+msgctxt ""
+"wizard_button:nodux_stock_report_by_filters.print_report_stock,start,end:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt ""
+"wizard_button:nodux_stock_report_by_filters.print_report_stock,start,print_:"
+msgid "Print"
+msgstr "Imprimir"
