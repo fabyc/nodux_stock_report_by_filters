@@ -470,6 +470,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0:
                             lineas['product'] = Product(product_id)
@@ -477,6 +478,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0:
                             lineas['product'] = Product(product_id)
@@ -484,6 +486,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0:
                             lineas['product'] = Product(product_id)
@@ -491,6 +494,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0:
                             lineas['product'] = Product(product_id)
@@ -498,6 +502,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -505,6 +510,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         if lineas:
                             product_lines.append(lineas)
@@ -566,11 +572,6 @@ class ReportStock(Report):
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
 
-                        elif data['igual'] == True and quantity == 0:
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -603,12 +604,6 @@ class ReportStock(Report):
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
 
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
@@ -629,12 +624,6 @@ class ReportStock(Report):
                             lineas['pricelist'] = listas_precios
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
                             lineas['uom'] = ProductUom(uom_id)
@@ -678,12 +667,6 @@ class ReportStock(Report):
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
 
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
@@ -715,12 +698,6 @@ class ReportStock(Report):
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
 
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
@@ -741,12 +718,6 @@ class ReportStock(Report):
                             lineas['pricelist'] = listas_precios
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
                             lineas['uom'] = ProductUom(uom_id)
@@ -790,12 +761,6 @@ class ReportStock(Report):
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
 
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
@@ -803,6 +768,8 @@ class ReportStock(Report):
                             lineas['pricelist'] = listas_precios
 
                     elif data['mayor_precio'] == True:
+
+
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
@@ -821,11 +788,7 @@ class ReportStock(Report):
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
 
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -853,12 +816,6 @@ class ReportStock(Report):
                             lineas['pricelist'] = listas_precios
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
                             lineas['quantity'] = quantity
                             lineas['uom'] = ProductUom(uom_id)
@@ -930,6 +887,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0:
                             lineas['product'] = Product(product_id)
@@ -937,6 +895,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0:
                             lineas['product'] = Product(product_id)
@@ -944,6 +903,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0:
                             lineas['product'] = Product(product_id)
@@ -951,13 +911,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0:
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -965,6 +919,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.template.list_price > Decimal(0.0)):
@@ -973,6 +928,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -980,6 +936,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -987,6 +944,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -994,13 +952,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1008,6 +960,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0)):
@@ -1016,6 +969,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1023,6 +977,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1030,6 +985,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1037,13 +993,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1051,6 +1001,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                 elif data['baja'] == True:
                     if data['todos_precio'] == True:
@@ -1060,6 +1011,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1067,6 +1019,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1074,6 +1027,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1081,13 +1035,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1095,6 +1043,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
@@ -1103,6 +1052,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1110,6 +1060,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1117,6 +1068,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1124,13 +1076,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1138,6 +1084,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
@@ -1146,6 +1093,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1153,6 +1101,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1160,6 +1109,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1167,13 +1117,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1181,6 +1125,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                 elif data['activo'] == True:
                     if data['todos_precio'] == True:
@@ -1190,6 +1135,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1197,6 +1143,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1204,6 +1151,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1211,13 +1159,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1225,6 +1167,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
@@ -1233,6 +1176,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1240,6 +1184,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1247,6 +1192,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1254,13 +1200,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1268,6 +1208,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
@@ -1276,6 +1217,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1283,6 +1225,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1290,6 +1233,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1297,13 +1241,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1311,6 +1249,7 @@ class ReportStock(Report):
                             lineas['quantity2'] = quantity2
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2
 
                 if lineas:
                     product_lines.append(lineas)
@@ -1376,6 +1315,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0:
                             lineas['product'] = Product(product_id)
@@ -1384,6 +1324,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0:
                             lineas['product'] = Product(product_id)
@@ -1392,6 +1333,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0:
                             lineas['product'] = Product(product_id)
@@ -1400,14 +1342,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0:
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -1416,6 +1351,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.template.list_price > Decimal(0.0)):
@@ -1425,6 +1361,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1433,6 +1370,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1441,6 +1379,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1449,14 +1388,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1465,6 +1397,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0)):
@@ -1474,6 +1407,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1482,6 +1416,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1490,6 +1425,8 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
+
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1498,14 +1435,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1514,6 +1444,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                 elif data['baja'] == True:
                     if data['todos_precio'] == True:
@@ -1524,6 +1455,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1532,6 +1464,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1540,6 +1473,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1548,14 +1482,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1564,6 +1491,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
@@ -1573,6 +1501,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1581,6 +1510,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1589,6 +1519,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1597,14 +1528,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1613,6 +1537,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
@@ -1622,6 +1547,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1630,6 +1556,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1638,6 +1565,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1646,14 +1574,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -1662,6 +1583,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                 elif data['activo'] == True:
                     if data['todos_precio'] == True:
@@ -1672,6 +1594,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1680,6 +1603,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1688,6 +1612,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1696,14 +1621,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1712,6 +1630,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
@@ -1721,6 +1640,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1729,6 +1649,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1737,6 +1658,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1745,14 +1667,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1761,6 +1676,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
@@ -1770,6 +1686,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1778,6 +1695,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1786,6 +1704,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1794,14 +1713,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -1810,6 +1722,7 @@ class ReportStock(Report):
                             lineas['quantity3'] = quantity3
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3
 
                 if lineas:
                     product_lines.append(lineas)
@@ -1886,6 +1799,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0:
                             lineas['product'] = Product(product_id)
@@ -1895,6 +1809,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0:
                             lineas['product'] = Product(product_id)
@@ -1904,6 +1819,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0:
                             lineas['product'] = Product(product_id)
@@ -1913,15 +1829,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0:
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -1931,6 +1839,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.template.list_price > Decimal(0.0)):
@@ -1941,6 +1850,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1950,6 +1860,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1959,6 +1870,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1968,15 +1880,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -1986,6 +1890,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0)):
@@ -1996,6 +1901,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2005,6 +1911,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2014,6 +1921,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2023,15 +1931,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2041,6 +1941,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                 elif data['baja'] == True:
                     if data['todos_precio'] == True:
@@ -2052,6 +1953,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2061,6 +1963,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2070,6 +1973,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2079,15 +1983,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2097,6 +1993,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
@@ -2107,6 +2004,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2116,6 +2014,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2125,6 +2024,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2134,15 +2034,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2152,6 +2044,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
@@ -2162,6 +2055,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2171,6 +2065,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2180,6 +2075,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2189,15 +2085,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2207,6 +2095,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                 elif data['activo'] == True:
                     if data['todos_precio'] == True:
@@ -2218,6 +2107,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2227,6 +2117,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2236,6 +2127,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2245,15 +2137,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2263,6 +2147,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
@@ -2273,6 +2158,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2282,6 +2168,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2291,6 +2178,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2300,15 +2188,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2318,6 +2198,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
@@ -2328,6 +2209,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2337,6 +2219,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2346,6 +2229,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2355,15 +2239,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2373,6 +2249,7 @@ class ReportStock(Report):
                             lineas['quantity4'] = quantity4
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4
 
                 if lineas:
                     product_lines.append(lineas)
@@ -2459,6 +2336,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0:
                             lineas['product'] = Product(product_id)
@@ -2469,6 +2347,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0:
                             lineas['product'] = Product(product_id)
@@ -2479,6 +2358,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0:
                             lineas['product'] = Product(product_id)
@@ -2489,16 +2369,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0:
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -2509,6 +2380,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.template.list_price > Decimal(0.0)):
@@ -2520,6 +2392,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2530,6 +2403,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2540,6 +2414,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2550,16 +2425,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2570,6 +2436,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0)):
@@ -2581,6 +2448,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2591,6 +2459,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2601,6 +2470,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2611,16 +2481,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0)):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0)):
                             lineas['product'] = Product(product_id)
@@ -2631,6 +2492,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                 elif data['baja'] == True:
                     if data['todos_precio'] == True:
@@ -2643,6 +2505,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2653,6 +2516,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2663,6 +2527,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2673,16 +2538,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2693,6 +2549,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
@@ -2704,6 +2561,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2714,6 +2572,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2724,6 +2583,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2734,16 +2594,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2754,6 +2605,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
@@ -2765,6 +2617,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2775,6 +2628,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2785,6 +2639,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2795,16 +2650,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == False):
                             lineas['product'] = Product(product_id)
@@ -2815,6 +2661,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                 elif data['activo'] == True:
                     if data['todos_precio'] == True:
@@ -2827,6 +2674,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2837,6 +2685,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2847,6 +2696,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2857,16 +2707,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2877,6 +2718,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                     elif data['mayor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
@@ -2888,6 +2730,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2898,6 +2741,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2908,6 +2752,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2918,16 +2763,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price > Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2938,6 +2774,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                     elif data['menor_precio'] == True:
                         if data['todos_stock'] == True and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
@@ -2949,6 +2786,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor'] == True and quantity > 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2959,6 +2797,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['menor'] == True and quantity < 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2969,6 +2808,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2979,16 +2819,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
-                        elif data['igual'] == True and quantity == 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
-                            lineas['product'] = Product(product_id)
-                            lineas['quantity'] = quantity
-                            lineas['quantity2'] = quantity2
-                            lineas['quantity3'] = quantity3
-                            lineas['quantity4'] = quantity4
-                            lineas['quantity5'] = quantity5
-                            lineas['uom'] = ProductUom(uom_id)
-                            lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                         elif data['mayor_igual'] == True and quantity >= 0 and (Product(product_id).template.list_price < Decimal(0.0))  and (Product(product_id).active == True):
                             lineas['product'] = Product(product_id)
@@ -2999,6 +2830,7 @@ class ReportStock(Report):
                             lineas['quantity5'] = quantity5
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
+                            lineas['total'] = quantity + quantity2 + quantity3 + quantity4 + quantity5
 
                 if lineas:
                     product_lines.append(lineas)
