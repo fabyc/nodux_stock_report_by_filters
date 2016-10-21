@@ -409,6 +409,8 @@ class ReportStock(Report):
         Product = pool.get('product.product')
         PriceList = pool.get('product.price_list')
 
+        products_all = Product.search([('active', '=', True)])
+
         Company = pool.get('company.company')
         ProductUom = pool.get('product.uom')
 
@@ -416,6 +418,7 @@ class ReportStock(Report):
         product_lines = []
 
         priceList = PriceList.search([('incluir_lista', '=', True)])
+        product_stock_0 = []
 
         if len(priceList) == 1:
             tam_price = 1
@@ -429,7 +432,6 @@ class ReportStock(Report):
             tam_price = 5
         elif len(priceList) == 6:
             tam_price = 6
-
 
         if data['no_bodegas'] == 'no_6':
             no_bodegas = 'no_6'
@@ -447,10 +449,8 @@ class ReportStock(Report):
                         product2type[product.id] = product.type
                         product2consumable[product.id] = product.consumable
 
-
                     for (location, product), quantity in pbl.iteritems():
                         product_qty[product] = (quantity, product2uom[product])
-
 
                     for product_id in product_qty:
                         lineas = {}
@@ -462,7 +462,6 @@ class ReportStock(Report):
                                 or product2consumable[product_id]):
                             continue
                         quantity, uom_id = product_qty[product_id]
-
 
                         if data['todos_stock'] == True:
                             lineas['product'] = Product(product_id)
@@ -514,6 +513,7 @@ class ReportStock(Report):
 
                         if lineas:
                             product_lines.append(lineas)
+
         elif data['no_bodegas'] == 'no_1':
             no_bodegas = 'no_1'
             with Transaction().set_context(stock_date_end=(data['date'])):
@@ -532,7 +532,16 @@ class ReportStock(Report):
 
             for (location, product), quantity in pbl.iteritems():
                 product_qty[product] = (quantity, product2uom[product])
+            for p in products_all:
+                is_in_pbl = False
+                for product_id in product_qty:
+                    if p.id == product_id:
+                        is_in_pbl = True
 
+                if is_in_pbl == False:
+                    product_qty[p.id] = (0, p.template.sale_uom)
+                    product2type[p.id] = p.type
+                    product2consumable[p.id] = p.consumable
 
             for product_id in product_qty:
                 listas_precios = []
@@ -552,7 +561,6 @@ class ReportStock(Report):
                             lineas['quantity'] = quantity
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-                            lineas['pricelist'] = listas_precios
 
                         elif data['mayor'] == True and quantity > 0:
                             lineas['product'] = Product(product_id)
@@ -571,7 +579,6 @@ class ReportStock(Report):
                             lineas['quantity'] = quantity
                             lineas['uom'] = ProductUom(uom_id)
                             lineas['pricelist'] = listas_precios
-
 
                         elif data['mayor_igual'] == True and quantity >= 0:
                             lineas['product'] = Product(product_id)
@@ -861,6 +868,20 @@ class ReportStock(Report):
                 for (location, product), quantity in pbl2.iteritems():
                     product_qty2[product] = (quantity, product2uom[product])
 
+            for p in products_all:
+                is_in_pbl = False
+                for product_id in product_qty:
+                    if p.id == product_id:
+                        is_in_pbl = True
+                for product_id in product_qty2:
+                    if p.id == product_id:
+                        is_in_pbl = True
+
+                if is_in_pbl == False:
+                    product_qty[p.id] = (0, p.template.sale_uom)
+                    product2type[p.id] = p.type
+                    product2consumable[p.id] = p.consumable
+                    product_qty2[product] = (0, p.template.sale_uom)
 
             for product_id in product_qty:
                 lineas = {}
@@ -1282,6 +1303,20 @@ class ReportStock(Report):
 
             for (location, product), quantity in pbl3.iteritems():
                 product_qty3[product] = (quantity, product2uom[product])
+
+
+            for p in products_all:
+                is_in_pbl = False
+                for product_id in product_qty:
+                    if p.id == product_id:
+                        is_in_pbl = True
+
+                if is_in_pbl == False:
+                    product_qty[p.id] = (0, p.template.sale_uom)
+                    product2type[p.id] = p.type
+                    product2consumable[p.id] = p.consumable
+                    product_qty2[product] = (0, p.template.sale_uom)
+                    product_qty3[product] = (0, p.template.sale_uom)
 
 
             for product_id in product_qty:
@@ -1761,6 +1796,19 @@ class ReportStock(Report):
             for (location, product), quantity in pbl4.iteritems():
                 product_qty4[product] = (quantity, product2uom[product])
 
+            for p in products_all:
+                is_in_pbl = False
+                for product_id in product_qty:
+                    if p.id == product_id:
+                        is_in_pbl = True
+
+                if is_in_pbl == False:
+                    product_qty[p.id] = (0, p.template.sale_uom)
+                    product2type[p.id] = p.type
+                    product2consumable[p.id] = p.consumable
+                    product_qty2[product] = (0, p.template.sale_uom)
+                    product_qty3[product] = (0, p.template.sale_uom)
+                    product_qty4[product] = (0, p.template.sale_uom)
 
             for product_id in product_qty:
                 lineas = {}
@@ -2291,6 +2339,21 @@ class ReportStock(Report):
 
             for (location, product), quantity in pbl5.iteritems():
                 product_qty5[product] = (quantity, product2uom[product])
+
+            for p in products_all:
+                is_in_pbl = False
+                for product_id in product_qty:
+                    if p.id == product_id:
+                        is_in_pbl = True
+
+                if is_in_pbl == False:
+                    product_qty[p.id] = (0, p.template.sale_uom)
+                    product2type[p.id] = p.type
+                    product2consumable[p.id] = p.consumable
+                    product_qty2[product] = (0, p.template.sale_uom)
+                    product_qty3[product] = (0, p.template.sale_uom)
+                    product_qty4[product] = (0, p.template.sale_uom)
+                    product_qty5[product] = (0, p.template.sale_uom)
 
             for product_id in product_qty:
                 lineas = {}
