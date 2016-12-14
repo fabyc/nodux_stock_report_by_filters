@@ -114,6 +114,8 @@ class PrintReportStockStart(ModelView):
 
     company = fields.Many2One('company.company', 'Company', required=True)
 
+
+
     @staticmethod
     def default_no_bodegas():
         return "no_1"
